@@ -11,7 +11,7 @@ if [[ $1 == 'debug' ]]; then
     fi
 
     cd cmake-build-debug
-    cmake -D CMAKE_C_COMPILER=gcc CMAKE_BUILD_TYPE=Debug .. && make
+    cmake -D CMAKE_C_COMPILER=clang CMAKE_BUILD_TYPE=Debug .. && make
 
 elif [[ $1 == 'release' ]]; then
     if [[ ! -d 'cmake-build-release' ]]; then
@@ -19,5 +19,5 @@ elif [[ $1 == 'release' ]]; then
     fi
 
     cd cmake-build-release
-    cmake -D CMAKE_C_COMPILER=gcc CMAKE_BUILD_TYPE=Release .. && make
+    cmake -D CMAKE_C_COMPILER=clang CMAKE_BUILD_TYPE=Release .. && make
 fi
