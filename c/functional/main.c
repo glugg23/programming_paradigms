@@ -2,6 +2,7 @@
 
 #include "helper.h"
 #include "map.h"
+#include "filter.h"
 
 int main() {
     size_t length = 10;
@@ -10,6 +11,12 @@ int main() {
     print_array(array, length);
 
     map(array, length, increment);
+
+    print_array(array, length);
+
+    ArrayTuple tuple = filter(array, length, is_even);
+    array = tuple.array;
+    length = tuple.length;
 
     print_array(array, length);
 
