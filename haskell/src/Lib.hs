@@ -1,7 +1,13 @@
 module Lib
-    ( myMap,
+    ( generateList,
+      myMap,
       myFilter
     ) where
+
+generateList :: Int -> [Int]
+generateList num
+  | num < 0 = []
+  | otherwise = generateList (pred num) ++ [num]
 
 myMap :: (a -> b) -> [a] -> [b]
 myMap _ [] = []

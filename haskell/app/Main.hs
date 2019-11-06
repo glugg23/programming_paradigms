@@ -4,5 +4,6 @@ import Lib
 
 main :: IO ()
 main = do
-    print $ myMap (+1) [0..9]
-    print $ myFilter (even) [0..9]
+    print $ generateList 9
+    print $ myMap succ $ generateList 9
+    print $ myFilter even $ generateList 9
