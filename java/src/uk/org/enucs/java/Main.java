@@ -18,5 +18,10 @@ public class Main {
         for(Vehicle v : vehicles) {
             System.out.println(v);
         }
+        System.out.println();
+
+        vehicles.stream()
+                .map(Vehicle::tuneUp)
+                .forEach(System.out::println);
     }
 }

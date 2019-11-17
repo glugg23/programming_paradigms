@@ -10,6 +10,14 @@ public class Truck extends Vehicle {
         this.trailerCapacity = trailerCapacity;
     }
 
+    @Override
+    public Vehicle tuneUp() {
+        super.tuneUp();
+        this.trailerCapacity += 100;
+
+        return this;
+    }
+
     public int getTrailerCapacity() {
         return trailerCapacity;
     }
