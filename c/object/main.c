@@ -2,6 +2,7 @@
 
 #include "vehicle.h"
 #include "truck.h"
+#include "object.h"
 
 int main() {
     vehicle* v = vehicle_init(150);
@@ -33,6 +34,37 @@ int main() {
     }
 
     truck_free(t);
+
+    object array[10];
+
+    for(int i = 0; i < 10; ++i) {
+        if(i % 2 == 0) {
+            array[i] = (object) {
+                .vehicle = vehicle_init(150),
+                .type = VEHICLE
+            };
+
+        } else {
+            array[i] = (object) {
+                .truck = truck_init(150, 100),
+                .type = TRUCK
+            };
+        }
+    }
+
+    for(int i = 0; i < 10; ++i) {
+        switch(array[i].type) {
+            case VEHICLE:
+                printf("Position %d is a vehicle\n", i);
+                vehicle_free(array[i].vehicle);
+                break;
+            case TRUCK:
+                printf("Position %d is a truck\n", i);
+                truck_free(array[i].truck);
+                break;
+            default: continue;
+        }
+    }
 
     return 0;
 }
