@@ -5,6 +5,10 @@ public class Engine {
     private double mpg;
     private EngineType type;
 
+    /***
+     * Create an Engine based on a certain type
+     * @param type an enum which describes the type of engine to create
+     */
     public Engine(EngineType type) {
         this.type = type;
 
@@ -25,6 +29,9 @@ public class Engine {
         }
     }
 
+    /*
+     * We can't set the individual values, if you want a new engine you'd need to create a new object
+     */
     public int getCC() {
         return cc;
     }

@@ -8,6 +8,10 @@ public class Wheel {
     private double traction;
     private WheelType type;
 
+    /**
+     * This constructor is private, outside of this class it is not possible to create a single instance of a wheel
+     * @param type the wheel type to create
+     */
     private Wheel(WheelType type) {
         this.type = type;
         this.percentageFull = 100.0;
@@ -20,6 +24,18 @@ public class Wheel {
         }
     }
 
+    /**
+     * Instead we have this factory method which generates a list of wheels.
+     * This is marked as static, this means that the method belongs to the class but doesn't act on an instance
+     * of the class. E.g. it's called with `Wheel.generate(...)` rather than
+     * ```
+     * Wheel w = new Wheel(...);
+     * var list = w.generate(...);
+     * ```
+     * @param type the type of wheels to create
+     * @param number the number of wheels to create
+     * @return a list of wheels
+     */
     public static List<Wheel> generate(WheelType type, int number) {
         List<Wheel> output = new ArrayList<>();
 
@@ -30,6 +46,10 @@ public class Wheel {
         return output;
     }
 
+    /**
+     * A tune up function for the wheel
+     * @return a new wheel if the type is not extreme, otherwise increases traction
+     */
     public Wheel tuneUp() {
         if(this.type != WheelType.EXTREME) {
             return new Wheel(type.next());
@@ -41,6 +61,9 @@ public class Wheel {
         return this;
     }
 
+    /*
+     * We can set the percentage full and the traction, but we cannot change the type of a wheel
+     */
     public double getPercentageFull() {
         return percentageFull;
     }

@@ -1,8 +1,12 @@
 package uk.org.enucs.java;
 
+/**
+ * Child of Vehicle
+ */
 public class Truck extends Vehicle {
     public final static int WHEEL_NUM = 4;
 
+    //This child class has a new member variable
     private int trailerCapacity;
 
     public Truck(EngineType engineType, WheelType wheelType, int trailerCapacity) {
@@ -10,6 +14,11 @@ public class Truck extends Vehicle {
         this.trailerCapacity = trailerCapacity;
     }
 
+    /***
+     * Here we override the parent method for tuneUp, so that the trailer capacity can be increased as well
+     * To do this we call the parent version first using `super.tuneUp()`, and then increase the trailer capacity.
+     * @return a tuned up truck
+     */
     @Override
     public Vehicle tuneUp() {
         super.tuneUp();
@@ -18,6 +27,9 @@ public class Truck extends Vehicle {
         return this;
     }
 
+    /*
+     * Encapsulation: This time we can both get and set trailer capacity
+     */
     public int getTrailerCapacity() {
         return trailerCapacity;
     }
