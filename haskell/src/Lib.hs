@@ -8,7 +8,7 @@ module Lib
 generateList :: Int -> [Int]
 generateList num
   | num < 0 = [] -- when num is less than 0 return an empty list
-  | otherwise = generateList (pred num) ++ [num] -- otherwise recurse and prepend the number
+  | otherwise = generateList (pred num) ++ [num] -- otherwise recurse and append the number
 
 {-
 generateList 5
