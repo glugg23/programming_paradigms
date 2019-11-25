@@ -1,5 +1,6 @@
 #pragma once
 
+//Declare the public type as having no member variables
 typedef struct vehicle vehicle;
 
 vehicle* vehicle_init(int);

@@ -5,6 +5,7 @@
 #include "vehicle.h"
 #include "util.h"
 
+//We contain a pointer to the parent class
 struct truck {
     vehicle* parent;
     int trailer_capacity;
@@ -23,6 +24,7 @@ void truck_free(truck* self) {
     free(self);
 }
 
+//This time we declare a settint for trailer capacity
 GET(truck, trailer_capacity, int)
 SET(truck, trailer_capacity, int)
 GET_PARENT(truck, vehicle, engine, int)

@@ -35,6 +35,7 @@ int main() {
 
     truck_free(t);
 
+    //Mocking polymorphism as we aren't treating a truck as a vehicle, just everything as a base object
     object array[10];
 
     for(int i = 0; i < 10; ++i) {
